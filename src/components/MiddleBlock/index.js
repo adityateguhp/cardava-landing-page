@@ -2,12 +2,13 @@ import { lazy } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
+import ReactPlayer from 'react-player'
 
 import * as S from "./styles";
 
 const Button = lazy(() => import("../../common/Button"));
 
-const MiddleBlock = ({ title, content, button, t }) => {
+const MiddleBlock = ({ title, content, button, video, t }) => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
@@ -31,10 +32,21 @@ const MiddleBlock = ({ title, content, button, t }) => {
                   {t(button)}
                 </Button>
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </Col>
           </S.ContentWrapper>
+          {video ? (
+            <ReactPlayer
+              url={t(video)}
+              controls
+              playing={true}
+              width="896px"
+              height="504px"
+            />
+          ) : (
+              ""
+            )}
         </Fade>
       </Row>
     </S.MiddleBlock>

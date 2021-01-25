@@ -17,19 +17,18 @@ const Home = () => {
   return (
     <Container>
       <ScrollToTop />
+      <MiddleBlock
+        title={MiddleBlockContent.title}
+        video="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      />
       <ContentBlock
         type="right"
         first="true"
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="developer.svg"
+        icon="cardavaBoxCloseView1.png"
         id="intro"
-      />
-      <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
       />
       <ContentBlock
         type="left"
